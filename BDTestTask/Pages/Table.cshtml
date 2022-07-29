@@ -1,0 +1,39 @@
+﻿@page
+@model BDTestTask.Pages.TableModel
+@{
+    ViewData["Title"] = "Список сотрудников";
+}
+<h1>@ViewData["Title"]</h1>
+
+<a class="nav-link text-dark" asp-area="" asp-page="/AddUser">Добавить сотрудника</a>
+<table style="WIDTH: 600px; BORDER-COLLAPSE: collapse" bordercolor="#bbbbbb" cellspacing="0" cellpadding="3">
+    <thead>
+        <tr>
+            <th style="WIDTH: 20%; BACKGROUND-COLOR: #d7e4ef; TEXT-ALIGN: center">Id</th>
+            <th style="WIDTH: 20%; BACKGROUND-COLOR: #d7e4ef; TEXT-ALIGN: center">Имя</th>
+            <th style="WIDTH: 20%; BACKGROUND-COLOR: #d7e4ef; TEXT-ALIGN: center">Фамилия</th>
+            <th style="WIDTH: 20%; BACKGROUND-COLOR: #d7e4ef; TEXT-ALIGN: center">Возраст</th>
+            <th style="WIDTH: 20%; BACKGROUND-COLOR: #d7e4ef; TEXT-ALIGN: center">Отдел</th>
+            <th style="WIDTH: 20%; BACKGROUND-COLOR: #d7e4ef; TEXT-ALIGN: center">Язык программирования</th>
+            <th style="WIDTH: 20%; BACKGROUND-COLOR: #d7e4ef; TEXT-ALIGN: center"></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var i in Model.employees)
+        {
+            <tr>
+                <td style="WIDTH: 20%; TEXT-ALIGN: center">@i.Id</td>
+                <td style="WIDTH: 20%; TEXT-ALIGN: center">@i.FirstName</td>
+                <td style="WIDTH: 20%; TEXT-ALIGN: center">@i.LastName</td>
+                <td style="WIDTH: 20%; TEXT-ALIGN: center">@i.Years</td>
+                <td style="WIDTH: 20%; TEXT-ALIGN: center">@i.Departament</td>
+                <td style="WIDTH: 20%; TEXT-ALIGN: center">@i.ProgLang</td>
+                <td style="WIDTH: 20%; TEXT-ALIGN: center">
+                    <div>
+                        
+                    </div>
+                </td>
+            </tr>
+        }
+    </tbody>
+<table>

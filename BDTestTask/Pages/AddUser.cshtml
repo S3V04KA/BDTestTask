@@ -1,0 +1,47 @@
+﻿@page
+@model BDTestTask.Pages.AddUserModel
+@{
+    ViewData["Title"] = "Добавить сотрудника";
+}
+<h1>@ViewData["Title"]</h1>
+
+<form method="post">
+    <div class="container" style="conteiner{display:flex; flex-wrap: wrap;}">
+        <p1>
+            Имя:
+            <input type="text" asp-for="Employee.FirstName" />
+        </p1>
+        <div class="break"/>
+        <p1>
+            Фамилия:
+            <input type="text" asp-for="Employee.LastName" />
+        </p1>
+        <div class="break"/>
+        <p1>
+            Возраст:
+            <input type="number" asp-for="Employee.Years" />
+        </p1>
+        <div class="break"/>
+        <p1>
+            Отдел:
+            <select asp-for="Employee.Departament">
+                <option>Младший программист</option>
+                <option>Средний программист</option>
+                <option>Старший программист</option>
+            </select>
+        </p1>
+        <div class="break"/>
+        <p1>
+            Язык программирования:
+            <select asp-for="Employee.ProgLang">
+                <option>JS</option>
+                <option>Python</option>
+                <option>C#</option>
+            </select>
+        </p1>
+        <div class="break"/>
+
+        <input type="submit" asp-page-handler="save" value="Сохранить" />
+        <input type="submit" asp-page-handler="cancel" value="Назад" />
+    </div>
+</form>
